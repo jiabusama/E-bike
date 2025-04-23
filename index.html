@@ -32,6 +32,78 @@
     <p>&copy; 2025 E-Bike Wiki | 静态页面托管于 GitHub Pages</p>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script>
+  fetch('data/bikes.json')
+    .then(res => res.json())
+    .then(data => {
+      const bikeList = document.getElementById('bike-list');
+      const brandFilter = document.getElementById('brandFilter');
+      const batteryFilter = document.getElementById('batteryFilter');
+      const priceFilter = document.getElementById('priceFilter');
+
+      const brands = [...new Set(data.map(bike => bike.brand))];
+      const batteries = [...new Set(data.map(bike => bike.battery))];
+      const prices = [...new Set(data.map(bike => bike.price))];
+
+      brands.forEach(brand => {
+        const option = document.createElement('option');
+        option.value = brand;
+        option.textContent = brand;
+        brandFilter.appendChild(option);
+      });
+      batteries.forEach(bat => {
+        const option = document.createElement('option');
+        option.value = bat;
+        option.textContent = bat;
+        batteryFilter.appendChild(option);
+      });
+      prices.forEach(price => {
+        const option = document.createElement('option');
+        option.value = price;
+        option.textContent = price;
+        priceFilter.appendChild(option);
+      });
+
+      function renderBikes(filtered) {
+        bikeList.innerHTML = '';
+        filtered.forEach(bike => {
+          const card = document.createElement('div');
+          card.className = 'car-card';
+          card.innerHTML = `
+            <img src="${bike.image}" alt="${bike.name}" />
+            <div class="info">
+              <h3>${bike.name}</h3>
+              <p>品牌：${bike.brand}</p>
+              <p>电池容量：${bike.battery}</p>
+              <p>续航：${bike.range} km</p>
+              <p>价格：${bike.price}</p>
+              <p>整车重量：${bike.weight} kg</p>
+              <p>电机功率：${bike.motorPower} W</p>
+            </div>
+          `;
+          card.onclick = () => {
+            window.location.href = `detail/${bike.id}.html`;
+          };
+          bikeList.appendChild(card);
+        });
+      }
+
+      function filterBikes() {
+        const selectedBrand = brandFilter.value;
+        const selectedBattery = batteryFilter.value;
+        const selectedPrice = priceFilter.value;
+
+        const filtered = data.filter(bike => {
+          return (!selectedBrand || bike.brand === selectedBrand) &&
+                 (!selectedBattery || bike.battery === selectedBattery) &&
+                 (!selectedPrice || bike.price === selectedPrice);
+        });
+        renderBikes(filtered);
+      }
+
+      brandFilter.onchange = batteryFilter.onchange = priceFilter.onchange = filterBikes;
+      renderBikes(data);
+    });
+  </script>
 </body>
 </html>
