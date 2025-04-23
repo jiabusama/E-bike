@@ -1,0 +1,33 @@
+[
+  {
+    "id": "bike01",
+    "name": "小牛 UQi+",
+    "brand": "小牛",
+    "battery": "48V 24Ah",
+    "range": 70,
+    "price": "￥3999",
+    "weight": 52,
+    "motorPower": 800,
+    "image": "https://cdn.jsdelivr.net/gh/example/bike-images/niu-uqi.jpg"
+  },
+  {
+    "id": "bike02",
+    "name": "雅迪 G5",
+    "brand": "雅迪",
+    "battery": "60V 26Ah",
+    "range": 100,
+    "price": "￥5299",
+    "weight": 63,
+    "motorPower": 1200,
+    "image": "https://cdn.jsdelivr.net/gh/example/bike-images/yadea-g5.jpg"
+  },
+  {
+    "id": "bike03",
+    "name": "九号 ES2",
+    "brand": "九号",
+    "battery": "54V 18Ah",
+    "range": 65,
+    "price": "￥3699",
+    "weight": 48,
+    "motorPower": 700,
+    "image": "https://cdn.jsdelivr.net/gh/example
