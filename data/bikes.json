@@ -5,7 +5,7 @@
     "brand": "小牛",
     "battery": "48V 24Ah",
     "range": 70,
-    "price": "￥3999",
+    "price": "3999",
     "weight": 52,
     "motorPower": 800,
     "image": "https://cdn.jsdelivr.net/gh/your-username/ev-bike-wiki/images/niu-uqi.jpg"
@@ -16,7 +16,7 @@
     "brand": "雅迪",
     "battery": "60V 26Ah",
     "range": 100,
-    "price": "￥5299",
+    "price": "5299",
     "weight": 63,
     "motorPower": 1200,
     "image": "https://cdn.jsdelivr.net/gh/your-username/ev-bike-wiki/images/yadea-g5.jpg"
@@ -27,7 +27,7 @@
     "brand": "九号",
     "battery": "54V 18Ah",
     "range": 65,
-    "price": "￥3699",
+    "price": "3699",
     "weight": 48,
     "motorPower": 700,
     "image": "https://cdn.jsdelivr.net/gh/your-username/ev-bike-wiki/images/segway-es2.jpg"
@@ -38,7 +38,7 @@
     "brand": "绿源",
     "battery": "48V 20Ah",
     "range": 55,
-    "price": "￥2899",
+    "price": "2899",
     "weight": 45,
     "motorPower": 600,
     "image": "https://cdn.jsdelivr.net/gh/your-username/ev-bike-wiki/images/luyuan-v1.jpg"
