@@ -8,7 +8,7 @@
     "price": "￥3999",
     "weight": 52,
     "motorPower": 800,
-    "image": "https://cdn.jsdelivr.net/gh/example/bike-images/niu-uqi.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/your-username/ev-bike-wiki/images/niu-uqi.jpg"
   },
   {
     "id": "bike02",
@@ -19,7 +19,7 @@
     "price": "￥5299",
     "weight": 63,
     "motorPower": 1200,
-    "image": "https://cdn.jsdelivr.net/gh/example/bike-images/yadea-g5.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/your-username/ev-bike-wiki/images/yadea-g5.jpg"
   },
   {
     "id": "bike03",
@@ -30,4 +30,17 @@
     "price": "￥3699",
     "weight": 48,
     "motorPower": 700,
-    "image": "https://cdn.jsdelivr.net/gh/example
+    "image": "https://cdn.jsdelivr.net/gh/your-username/ev-bike-wiki/images/segway-es2.jpg"
+  },
+  {
+    "id": "bike04",
+    "name": "绿源 V1",
+    "brand": "绿源",
+    "battery": "48V 20Ah",
+    "range": 55,
+    "price": "￥2899",
+    "weight": 45,
+    "motorPower": 600,
+    "image": "https://cdn.jsdelivr.net/gh/your-username/ev-bike-wiki/images/luyuan-v1.jpg"
+  }
+]
