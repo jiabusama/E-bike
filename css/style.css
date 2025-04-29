@@ -68,14 +68,18 @@ header p {
   border-radius: 12px;
   box-shadow: 0 0 12px #00ffcce0;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 
+    transform 0.3s cubic-bezier(.34,1.56,.64,1), 
+    box-shadow 0.3s cubic-bezier(.34,1.56,.64,1);
   cursor: pointer;
   animation: fadeIn 0.5s ease-in-out;
+  will-change: transform, box-shadow;
 }
 
 .bike-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 20px #00ffcce0;
+  transform: translateY(-12px) scale(1.03) rotate(-1deg);
+  box-shadow: 0 8px 30px #00ffcce0, 0 1.5px 5px #00ffcc44;
+  z-index: 2;
 }
 
 .bike-card img {
