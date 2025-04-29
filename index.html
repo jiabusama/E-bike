@@ -54,7 +54,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       const brands = [...new Set(data.map(bike => bike.brand))];
       const batteries = [...new Set(data.map(bike => bike.battery))];
-      const prices = [...new Set(data.map(bike => bike.price))];
+      //const prices = [...new Set(data.map(bike => bike.price))];
+      const priceFilter = document.getElementById('priceFilter');
+       priceFilter.innerHTML = `
+        <option value="">价格区间</option>
+        <option value="0-4000">4000元以下</option>
+         <option value="4000-5000">4000-5000元</option>
+        <option value="5000-6000">5000-6000元</option>
+      `;
 
       brands.forEach(brand => {
         const option = document.createElement('option');
@@ -68,12 +75,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         option.textContent = bat;
         batteryFilter.appendChild(option);
       });
-      prices.forEach(price => {
+      /*prices.forEach(price => {
         const option = document.createElement('option');
         option.value = price;
         option.textContent = price;
         priceFilter.appendChild(option);
-      });
+      });*/
 
       function renderBikes(filtered) {
         bikeList.innerHTML = '';
@@ -103,12 +110,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const selectedBrand = brandFilter.value;
         const selectedBattery = batteryFilter.value;
         const selectedPrice = priceFilter.value;
-
+      
         const filtered = data.filter(bike => {
+          const priceNum = parseInt(bike.price.replace('￥', ''));
+          let priceMatch = true;
+      
+          if (selectedPrice) {
+            const [min, max] = selectedPrice.split('-').map(Number);
+            priceMatch = priceNum >= min && priceNum <= max;
+          }
+      
           return (!selectedBrand || bike.brand === selectedBrand) &&
                  (!selectedBattery || bike.battery === selectedBattery) &&
-                 (!selectedPrice || bike.price === selectedPrice);
+                 priceMatch;
         });
+      
         renderBikes(filtered);
       }
 
